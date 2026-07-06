@@ -113,6 +113,10 @@ export default function ContactUsPage() {
               </div>
             </div>
             <div className="space-y-2">
+              <label className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Phone Number</label>
+              <input className="w-full bg-transparent border-b border-on-surface/10 py-4 font-body-lg text-body-lg focus:border-primary transition-all placeholder:text-on-surface/20" placeholder="+91 00000 00000" type="tel" />
+            </div>
+            <div className="space-y-2">
               <label className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Message</label>
               <textarea className="w-full bg-transparent border-b border-on-surface/10 py-4 font-body-lg text-body-lg focus:border-primary transition-all placeholder:text-on-surface/20 resize-none" placeholder="How can we help you?" rows={4}></textarea>
             </div>

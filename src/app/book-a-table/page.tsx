@@ -6,7 +6,7 @@ export default function BookATablePage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#0B0B0B]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background"></div>
           <img
             className="w-full h-full object-cover"
             alt="Cinematic restaurant interior at night"
@@ -14,7 +14,7 @@ export default function BookATablePage() {
           />
         </div>
         <div className="relative z-10 text-center px-margin-mobile">
-          <span className="font-label-caps text-label-caps text-primary mb-6 block tracking-[0.3em]">ESTABLISHED 2024</span>
+          <span className="font-label-caps text-label-caps text-primary mb-6 block tracking-[0.3em]">ESTABLISHED 2026</span>
           <h1 className="font-display-lg text-display-lg md:text-display-lg text-on-surface max-w-4xl mx-auto">Reserve Your Table</h1>
           <div className="w-24 h-[1px] bg-primary mx-auto mt-8 opacity-50"></div>
         </div>
@@ -97,8 +97,12 @@ export default function BookATablePage() {
                   <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Full Name</label>
                   <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" placeholder="Your Name" type="text" />
                 </div>
-                {/* Phone */}
-                <div className="space-y-2 md:col-span-2">
+                {/* Email and Phone */}
+                <div className="space-y-2 md:col-span-1">
+                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Email Address</label>
+                  <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" placeholder="Your Email" type="email" />
+                </div>
+                <div className="space-y-2 md:col-span-1">
                   <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Phone Number</label>
                   <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" placeholder="+91 00000 00000" type="tel" />
                 </div>

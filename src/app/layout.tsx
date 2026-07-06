@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Bhubaneswar Kitchen n Cafe | Authentic Flavours",
-  description: "A premium family dining experience celebrating the rich heritage of Odia cuisine and signature biryanis.",
+  title: "Royal Odisha Boutique Dining & Stay",
+  description: "A premium boutique resort and family dining experience celebrating the rich heritage of Odia hospitality.",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark font-body-md">
+    <html lang="en" className="font-body-md">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
