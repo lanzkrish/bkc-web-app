@@ -3,7 +3,19 @@
 import Link from "next/link";
 import { useState, useMemo } from "react";
 
-const fullMenuData = [
+type MenuItem = {
+  name: string;
+  type: string;
+  price: number | Record<string, number>;
+};
+
+type MenuSection = {
+  category: string;
+  subCategory?: string;
+  items: MenuItem[];
+};
+
+const fullMenuData: MenuSection[] = [
   {
     category: "Soup Section",
     items: [
