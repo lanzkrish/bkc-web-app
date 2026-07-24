@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TableBookingForm from "@/components/TableBookingForm";
 
 export default function BookATablePage() {
   return (
@@ -56,67 +57,8 @@ export default function BookATablePage() {
         </div>
         
         {/* Form Column */}
-        <div className="lg:col-span-7">
-          <div className="glass-panel p-10 md:p-16 rounded-sm gold-glow">
-            <form className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                {/* Date */}
-                <div className="space-y-2">
-                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Date</label>
-                  <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" type="date" />
-                </div>
-                {/* Time */}
-                <div className="space-y-2">
-                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Time</label>
-                  <select className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline appearance-none">
-                    <option className="bg-surface">07:00 PM</option>
-                    <option className="bg-surface">07:30 PM</option>
-                    <option className="bg-surface">08:00 PM</option>
-                    <option className="bg-surface">08:30 PM</option>
-                    <option className="bg-surface">09:00 PM</option>
-                    <option className="bg-surface">09:30 PM</option>
-                  </select>
-                </div>
-                {/* Guests */}
-                <div className="space-y-2">
-                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Guest Count</label>
-                  <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" placeholder="Number of Guests" type="number" />
-                </div>
-                {/* Occasion */}
-                <div className="space-y-2">
-                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Occasion</label>
-                  <select className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline appearance-none">
-                    <option className="bg-surface">Casual</option>
-                    <option className="bg-surface">Birthday</option>
-                    <option className="bg-surface">Anniversary</option>
-                    <option className="bg-surface">Corporate</option>
-                  </select>
-                </div>
-                {/* Name */}
-                <div className="space-y-2 md:col-span-2">
-                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Full Name</label>
-                  <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" placeholder="Your Name" type="text" />
-                </div>
-                {/* Email and Phone */}
-                <div className="space-y-2 md:col-span-1">
-                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Email Address</label>
-                  <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" placeholder="Your Email" type="email" />
-                </div>
-                <div className="space-y-2 md:col-span-1">
-                  <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Phone Number</label>
-                  <input className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline" placeholder="+91 00000 00000" type="tel" />
-                </div>
-              </div>
-              <div className="pt-6">
-                <button className="w-full bg-primary text-on-secondary-fixed py-5 font-label-caps text-label-caps tracking-[0.2em] hover:bg-primary/90 transition-all duration-300 rounded-sm" type="submit">
-                  REQUEST RESERVATION
-                </button>
-                <p className="text-center mt-6 font-label-caps text-[10px] text-on-surface-variant/50">
-                  * NOTE: YOUR RESERVATION WILL BE CONFIRMED VIA WHATSAPP.
-                </p>
-              </div>
-            </form>
-          </div>
+        <div id="booking-form" className="lg:col-span-7 scroll-mt-24">
+          <TableBookingForm />
         </div>
       </section>
 

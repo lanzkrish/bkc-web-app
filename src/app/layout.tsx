@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingCTAs from "@/components/FloatingCTAs";
 
 export const metadata: Metadata = {
   title: "Royal Odisha Boutique Dining & Stay",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <main className="flex-1 mt-[80px]">
           {children}
         </main>
+        <FloatingCTAs />
         <Footer />
       </body>
     </html>

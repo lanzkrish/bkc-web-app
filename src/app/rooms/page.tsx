@@ -109,7 +109,7 @@ export default function RoomsPage() {
       </section>
 
       {/* Room Booking Form */}
-      <section id="book-room" className="py-16 md:py-section-gap bg-surface-dark text-text-light relative overflow-hidden">
+      <section id="book-room" className="py-16 md:py-section-gap bg-surface-dark text-text-light relative overflow-hidden scroll-mt-24">
         <div className="relative z-10 max-w-4xl mx-auto text-center px-margin-mobile">
           <span className="font-label-caps text-label-caps text-gold mb-4 block tracking-widest uppercase">Reservations</span>
           <h2 className="font-headline-md text-headline-md text-text-light mb-8">Book Your Stay</h2>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BookingForms from "@/components/BookingForms";
 
 export default function Home() {
   return (
@@ -156,109 +157,7 @@ export default function Home() {
             Whether you are joining us for an unforgettable dining experience or seeking a luxurious stay, we look forward to welcoming you.
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Table Booking Card */}
-            <div className="card p-8 md:p-12 text-left">
-              <h3 className="font-headline-sm text-headline-sm text-text-main mb-8 text-center">Reserve a Table</h3>
-              <form className="space-y-6">
-                <div>
-                  <label className="font-label-caps text-label-caps text-primary-dark block mb-2">FULL NAME</label>
-                  <input className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" placeholder="Your Name" type="text" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="font-label-caps text-label-caps text-primary-dark block mb-2">EMAIL ADDRESS</label>
-                    <input className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" placeholder="Your Email" type="email" />
-                  </div>
-                  <div>
-                    <label className="font-label-caps text-label-caps text-primary-dark block mb-2">PHONE NUMBER</label>
-                    <input className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" placeholder="+91 00000 00000" type="tel" />
-                  </div>
-                </div>
-                <div>
-                  <label className="font-label-caps text-label-caps text-primary-dark block mb-2">DATE</label>
-                  <input className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" type="date" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="font-label-caps text-label-caps text-primary-dark block mb-2">GUESTS</label>
-                    <select className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all">
-                      <option>2 Persons</option>
-                      <option>4 Persons</option>
-                      <option>6+ Persons</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="font-label-caps text-label-caps text-primary-dark block mb-2">TIME</label>
-                    <select className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all">
-                      <option>07:00 PM</option>
-                      <option>08:00 PM</option>
-                      <option>09:00 PM</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="pt-4">
-                  <button className="btn-primary w-full py-4 font-label-caps text-label-caps uppercase tracking-widest">
-                    Confirm Table
-                  </button>
-                </div>
-              </form>
-            </div>
-
-            {/* Room Booking Card */}
-            <div className="card p-8 md:p-12 text-left bg-surface-dark border-gold/20 shadow-2xl">
-              <h3 className="font-headline-sm text-headline-sm text-gold mb-8 text-center">Book a Room</h3>
-              <form className="space-y-6">
-                <div>
-                  <label className="font-label-caps text-label-caps text-gold block mb-2">FULL NAME</label>
-                  <input className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" placeholder="Your Name" type="text" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">EMAIL ADDRESS</label>
-                    <input className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" placeholder="Your Email" type="email" />
-                  </div>
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">PHONE NUMBER</label>
-                    <input className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" placeholder="+91 00000 00000" type="tel" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">CHECK-IN</label>
-                    <input className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" type="date" />
-                  </div>
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">CHECK-OUT</label>
-                    <input className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" type="date" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">GUESTS</label>
-                    <select className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all [&>option]:text-text-main">
-                      <option>1 Guest</option>
-                      <option>2 Guests</option>
-                      <option>3 Guests</option>
-                      <option>4+ Guests</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">ROOM TYPE</label>
-                    <select className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all [&>option]:text-text-main">
-                      <option>The Heritage Suite</option>
-                      <option>The Classic Room</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="pt-4">
-                  <button className="btn-gold w-full py-4 font-label-caps text-label-caps uppercase tracking-widest text-text-main">
-                    Request Room
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+          <BookingForms />
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 type MenuItem = {
   name: string;
@@ -15,270 +15,26 @@ type MenuSection = {
   items: MenuItem[];
 };
 
-const fullMenuData: MenuSection[] = [
-  {
-    category: "Soup Section",
-    items: [
-      { name: "Roasted Tomato Basil Soup", type: "veg", price: { regular: 106, large: 130 } },
-      { name: "Authentic Sweet Corn Soup", type: "veg", price: { regular: 106, large: 130 } },
-      { name: "Veg Manchow Soup", type: "veg", price:{ regular:106, large:130 } },
-      { name:"Hot & Sour Soup", type:"veg", price:{ regular:106, large:130 } },
-      { name:"Burnt Garlic Soup", type:"veg", price:{ regular:106, large:130 } },
-      { name:"Chef's Special Soup", type:"veg", price:{ regular:119, large:142 } },
-      { name:"Lemon Coriander Soup", type:"veg", price:{ regular:106, large:130 } },
-      { name:"Mutton Soup", type:"non-veg", price:149 }
-    ]
-  },
-  {
-    category:"Starters & Appetizers",
-    subCategory:"Vegetarian",
-    items:[
-      { name:"Masala Papad", type:"veg", price:60 },
-      { name:"Fried Papad", type:"veg", price:50 },
-      { name:"Roasted Papad", type:"veg", price:40 },
-      { name:"Paneer Deep Fried with Hong Kong Sauce", type:"veg", price:298 },
-      { name:"Veg Shashlik", type:"veg", price:238 },
-      { name:"Paneer Lollipop", type:"veg", price:238 },
-      { name:"Stuffed Mushroom with Hot Garlic Sauce", type:"veg", price:238 },
-      { name:"Veg Manchurian", type:"veg", price:226 },
-      { name:"Honey Chilli Potato", type:"veg", price:190 },
-      { name:"American Crispy Corn Chatpata", type:"veg", price:190 },
-      { name:"French Fries", type:"veg", price:144 },
-      { name:"Peri Peri French Fries", type:"veg", price:139 },
-      { name:"Paneer Chatpata", type:"veg", price:169 }
-    ]
-  },
-  {
-    category: "Rice & Noodles",
-    items: [
-      { name: "Plain Rice", type: "veg", price: { veg: 82, mix: 159 } },
-      { name: "Burnt Garlic Fried Rice", type: "both", price: { veg: 199, nonVeg: 234, mix: 259 } },
-      { name: "Schezwan Fried Rice", type: "both", price: { veg: 199, nonVeg: 214, mix: 259 } },
-      { name: "Chilli Garlic Fried Rice", type: "both", price: { veg: 199, nonVeg: 214, mix: 259 } },
-      { name: "Jeera Rice", type: "veg", price: 142 },
-      { name: "Curd Rice", type: "veg", price: 142 },
-      { name: "Ghee Rice", type: "veg", price: 166 },
-      { name: "Special Fried Rice", type: "both", price: { veg: 219, nonVeg: 269 } },
-      { name: "Paneer Fried Rice", type: "veg", price: 178 },
-      { name: "Mushroom Fried Rice", type: "veg", price: 178 },
-      { name: "Baby Corn Fried Rice", type: "veg", price: 178 },
-      { name: "Veg Pulao", type: "veg", price: 199 },
-      { name: "Veg Noodles", type: "veg", price: 142 },
-      { name: "Mix Veg Noodles", type: "veg", price: 226 },
-      { name: "Schezwan Veg Noodles", type: "veg", price: 166 },
-      { name: "Chicken Noodles", type: "non-veg", price: 199 },
-      { name: "Schezwan Chicken Noodles", type: "non-veg", price: 214 },
-      { name: "Mix Non Veg Noodles", type: "non-veg", price: { regular:274, mix:299 } }
-    ]
-  },
-  {
-    category: "Main Course",
-    subCategory: "Veg Curries",
-    items: [
-      { name:"Dal Fry", type:"veg", price:130 },
-      { name:"Dal Tadka (Ghee)", type:"veg", price:166 },
-      { name:"Veg Curry Mix", type:"veg", price:200 },
-      { name:"Veg Kadai", type:"veg", price:190 },
-      { name:"Veg Do Pyaza", type:"veg", price:200 },
-      { name:"Veg Hyderabadi", type:"veg", price:200 },
-      { name:"Navratan Korma", type:"veg", price:226 }
-    ]
-  },
-  {
-    category:"Main Course",
-    subCategory:"Paneer",
-    items:[
-      { name:"Paneer Kadai", type:"veg", price:214 },
-      { name:"Paneer Hyderabadi", type:"veg", price:214 },
-      { name:"Paneer Butter Masala", type:"veg", price:214 },
-      { name:"Paneer Navratan Korma", type:"veg", price:238 },
-      { name:"Paneer Do Piyaza", type:"veg", price:226 },
-      { name:"Paneer Chatpata", type:"veg", price:226 },
-      { name:"Paneer Tikka Masala", type:"veg", price:238 },
-      { name:"Kaju Paneer Curry", type:"veg", price:299 }
-    ]
-  },
-  {
-    category:"Main Course",
-    subCategory:"Mushroom",
-    items:[
-      { name:"Mushroom Kadai", type:"veg", price:200 },
-      { name:"Mushroom Do Pyaza", type:"veg", price:200 },
-      { name:"Mushroom Kolhapuri", type:"veg", price:226 },
-      { name:"Mushroom Butter Masala", type:"veg", price:226 },
-      { name:"Mushroom Chatpata", type:"veg", price:226 },
-      { name:"Mushroom Hyderabadi", type:"veg", price:226 },
-      { name:"Kaju Mushroom Curry", type:"veg", price:286 }
-    ]
-  },
-  {
-    category:"Main Course",
-    subCategory:"Chicken",
-    items:[
-      { name:"Butter Chicken", type:"non-veg", price:264 },
-      { name:"Kadai Chicken", type:"non-veg", price:238 },
-      { name:"Chicken Do Pyaza", type:"non-veg", price:238 },
-      { name:"Chicken Lababdar", type:"non-veg", price:274 },
-      { name:"Chicken Kaswa", type:"non-veg", price:264 },
-      { name:"Chicken Curry (Home Style)", type:"non-veg", price:252 },
-      { name:"Chicken Rogan Josh", type:"non-veg", price:238 },
-      { name:"Chicken Muglai", type:"non-veg", price:249 }
-    ]
-  },
-  {
-    category:"Main Course",
-    subCategory:"Egg",
-    items:[
-      { name:"Egg Masala", type:"egg", price:154 },
-      { name:"Egg Kadai", type:"egg", price:154 },
-      { name:"Egg Do Pyaza", type:"egg", price:154 },
-      { name:"Egg Bhurji", type:"egg", price:118 }
-    ]
-  },
-  {
-    category:"Main Course",
-    subCategory:"Seafood",
-    items:[
-      { name:"Fish Curry", type:"non-veg", price:240 },
-      { name:"Prawn Masala", type:"non-veg", price:389 },
-      { name:"Kadai Prawn", type:"non-veg", price:389 },
-      { name:"Malai Prawn Curry", type:"non-veg", price:389 },
-      { name:"Prawn Curry (Home Style)", type:"non-veg", price:389 }
-    ]
-  },
-  {
-    category:"Main Course",
-    subCategory:"Mutton",
-    items:[
-      { name:"Mutton Masala", type:"non-veg", price:389 },
-      { name:"Mutton Curry (Home Style)", type:"non-veg", price:389 },
-      { name:"Mutton Kadai", type:"non-veg", price:389 },
-      { name:"Mutton Rogan Josh", type:"non-veg", price:389 },
-      { name:"Mutton Kaswa", type:"non-veg", price:389 },
-      { name:"Mutton Do Pyaza", type:"non-veg", price:389 },
-      { name:"Baripada Mutton Mudhi", type:"non-veg", price:399 }
-    ]
-  },
-  {
-    category:"Continental",
-    items:[
-      { name:"Chicken Popcorn", type:"non-veg", price:234 },
-      { name:"Fish Fingers", type:"non-veg", price:389 },
-      { name:"Butter Garlic Prawns", type:"non-veg", price:389 },
-      { name:"Peri Peri Prawns", type:"non-veg", price:389 }
-    ]
-  },
-  {
-    category:"Biryani",
-    items:[
-      { name:"Hyderabadi Chicken Dum Biryani", type:"non-veg", price:239 },
-      { name:"Boneless Chicken Biryani", type:"non-veg", price:264 },
-      { name:"Chicken Fry Piece Biryani", type:"non-veg", price:239 },
-      { name:"Bhubaneswar Kitchen Special Biryani", type:"non-veg", price:329 },
-      { name:"Chicken Lollipop Biryani", type:"non-veg", price:298 },
-      { name:"Mutton Fry Piece Biryani", type:"non-veg", price:359 },
-      { name:"Prawn Biryani", type:"non-veg", price:359 },
-      { name:"Veg Biryani (Mushroom)", type:"veg", price:300 },
-      { name:"Veg Biryani (Paneer)", type:"veg", price:310 },
-      { name:"Muglai Chicken Biryani", type:"non-veg", price:279 },
-      { name:"Muglai Mutton Biryani", type:"non-veg", price:359 },
-      { name:"Paneer Biryani", type:"veg", price:239 },
-      { name:"Mushroom Biryani", type:"veg", price:229 }
-    ]
-  },
-  {
-    category:"Tandoori & Breads",
-    subCategory:"Breads",
-    items:[
-      { name:"Roti Plain", type:"veg", price:18 },
-      { name:"Roti Butter", type:"veg", price:30 },
-      { name:"Naan Plain", type:"veg", price:35 },
-      { name:"Butter Naan", type:"veg", price:40 },
-      { name:"Garlic Naan", type:"veg", price:50 },
-      { name:"Methi Naan", type:"veg", price:50 },
-      { name:"Tandoori Roti Plain", type:"veg", price:25 },
-      { name:"Tandoori Roti Butter", type:"veg", price:30 },
-      { name:"Masala Kulcha", type:"veg", price:45 },
-      { name:"Butter Kulcha", type:"veg", price:35 }
-    ]
-  },
-  {
-    category:"Paratha",
-    items:[
-      { name:"Laccha Paratha", type:"veg", price:30 },
-      { name:"Butter Paratha", type:"veg", price:40 },
-      { name:"Garlic Paratha", type:"veg", price:50 },
-      { name:"Aloo Paratha", type:"veg", price:99 },
-      { name:"Methi Paratha", type:"veg", price:99 }
-    ]
-  },
-  {
-    category:"Tandoori",
-    items:[
-      { name:"Tandoori Chicken Half", type:"non-veg", price:299 },
-      { name:"Tandoori Chicken Full", type:"non-veg", price:549 },
-      { name:"Tangdi Kebab", type:"non-veg", price:239 },
-      { name:"Chicken Tikka", type:"non-veg", price:239 },
-      { name:"Chicken Malai Tikka", type:"non-veg", price:249 },
-      { name:"Paneer Tikka", type:"veg", price:249 },
-      { name:"Malai Paneer Tikka", type:"veg", price:279 },
-      { name:"Reshmi Kebab", type:"non-veg", price:289 }
-    ]
-  },
-  {
-    category:"Desserts",
-    items:[
-      { name:"Dahi Boondi", type:"veg", price:69 },
-      { name:"Sizzling Brownie with Ice Cream", type:"veg", price:229 },
-      { name:"Brownie with Ice Cream", type:"veg", price:199 },
-      { name:"Hot Gulab Jamun with Chocolate Sauce", type:"veg", price:89 },
-      { name:"Chocolate Ice Cream", type:"veg", price:99 },
-      { name:"Vanilla Ice Cream", type:"veg", price:99 },
-      { name:"Strawberry Ice Cream", type:"veg", price:99 },
-      { name:"Butterscotch Ice Cream", type:"veg", price:99 }
-    ]
-  },
-  {
-    category:"Beverages",
-    subCategory:"Classic",
-    items:[
-      { name:"Tea", type:"veg", price:20 },
-      { name:"Masala Tea", type:"veg", price:25 },
-      { name:"Coffee", type:"veg", price:30 },
-      { name:"Buttermilk", type:"veg", price:49 },
-      { name:"Fresh Lime Soda", type:"veg", price:89 },
-      { name:"Lassi Plain", type:"veg", price:99 },
-      { name:"Sweet Lassi", type:"veg", price:99 },
-      { name:"Salted Lassi", type:"veg", price:99 },
-      { name:"Vanilla Milkshake", type:"veg", price:149 },
-      { name:"Strawberry Milkshake", type:"veg", price:149 },
-      { name:"KitKat Milkshake", type:"veg", price:149 },
-      { name:"Oreo Milkshake", type:"veg", price:149 },
-      { name:"Butterscotch Milkshake", type:"veg", price:149 },
-      { name:"Chocolate Milkshake", type:"veg", price:149 },
-      { name:"Cold Coffee", type:"veg", price:149 },
-      { name:"Masala Soft Drink", type:"veg", price:69 }
-    ]
-  },
-  {
-    category:"Mocktails",
-    items:[
-      { name:"Virgin Mojito", type:"veg", price:139 },
-      { name:"Blue Lagoon", type:"veg", price:129 },
-      { name:"Blueberry Mojito", type:"veg", price:129 },
-      { name:"Green Apple", type:"veg", price:129 },
-      { name:"Kiwi Mojito", type:"veg", price:129 },
-      { name:"Spring Fever", type:"veg", price:149 },
-      { name:"Coco Colada", type:"veg", price:149 }
-    ]
-  }
-];
+
 
 export default function FullMenuPage() {
-  const categories = useMemo(() => Array.from(new Set(fullMenuData.map(s => s.category))), []);
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const [fullMenuData, setFullMenuData] = useState<MenuSection[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState("");
   const [dietFilter, setDietFilter] = useState("all");
+
+  useEffect(() => {
+    fetch('http://localhost:5010/api/menu')
+      .then(res => res.json())
+      .then(data => {
+        setFullMenuData(data);
+        const cats = Array.from(new Set(data.map((s: MenuSection) => s.category))) as string[];
+        setCategories(cats);
+        if (cats.length > 0) setActiveCategory(cats[0]);
+      })
+      .catch(console.error);
+  }, []);
 
   const filteredData = useMemo(() => {
     let data = fullMenuData;
