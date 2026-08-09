@@ -45,6 +45,22 @@ export default function TableBookingForm() {
           <div className="space-y-2">
             <label className="font-label-caps text-[10px] text-on-surface-variant/70 uppercase">Time</label>
             <select name="time" required className="w-full bg-transparent border-none p-0 py-2 font-body-lg text-on-surface input-underline appearance-none">
+              <option className="bg-surface">11:00 AM</option>
+              <option className="bg-surface">11:30 AM</option>
+              <option className="bg-surface">12:00 PM</option>
+              <option className="bg-surface">12:30 PM</option>
+              <option className="bg-surface">01:00 PM</option>
+              <option className="bg-surface">01:30 PM</option>
+              <option className="bg-surface">02:00 PM</option>
+              <option className="bg-surface">02:30 PM</option>
+              <option className="bg-surface">03:00 PM</option>
+              <option className="bg-surface">03:30 PM</option>
+              <option className="bg-surface">04:00 PM</option>
+              <option className="bg-surface">04:30 PM</option>
+              <option className="bg-surface">05:00 PM</option>
+              <option className="bg-surface">05:30 PM</option>
+              <option className="bg-surface">06:00 PM</option>
+              <option className="bg-surface">06:30 PM</option>
               <option className="bg-surface">07:00 PM</option>
               <option className="bg-surface">07:30 PM</option>
               <option className="bg-surface">08:00 PM</option>

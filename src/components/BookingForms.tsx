@@ -74,9 +74,20 @@ export default function BookingForms() {
               <input name="phone" required className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" placeholder="+91 00000 00000" type="tel" />
             </div>
           </div>
-          <div>
-            <label className="font-label-caps text-label-caps text-primary-dark block mb-2">DATE</label>
-            <input name="date" required className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" type="date" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="font-label-caps text-label-caps text-primary-dark block mb-2">DATE</label>
+              <input name="date" required className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all" type="date" />
+            </div>
+            <div>
+              <label className="font-label-caps text-label-caps text-primary-dark block mb-2">OCCASION</label>
+              <select name="occasion" required className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all [&>option]:text-text-main">
+                <option>Casual</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Corporate</option>
+              </select>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -89,10 +100,29 @@ export default function BookingForms() {
             </div>
             <div>
               <label className="font-label-caps text-label-caps text-primary-dark block mb-2">TIME</label>
-              <select name="time" required className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all">
+              <select name="time" required className="w-full border-b border-border-custom focus:border-primary bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all [&>option]:text-text-main">
+                <option>11:00 AM</option>
+                <option>11:30 AM</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>01:00 PM</option>
+                <option>01:30 PM</option>
+                <option>02:00 PM</option>
+                <option>02:30 PM</option>
+                <option>03:00 PM</option>
+                <option>03:30 PM</option>
+                <option>04:00 PM</option>
+                <option>04:30 PM</option>
+                <option>05:00 PM</option>
+                <option>05:30 PM</option>
+                <option>06:00 PM</option>
+                <option>06:30 PM</option>
                 <option>07:00 PM</option>
+                <option>07:30 PM</option>
                 <option>08:00 PM</option>
+                <option>08:30 PM</option>
                 <option>09:00 PM</option>
+                <option>09:30 PM</option>
               </select>
             </div>
           </div>

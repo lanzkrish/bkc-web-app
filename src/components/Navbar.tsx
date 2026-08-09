@@ -30,11 +30,7 @@ export default function Navbar() {
       : "font-headline-sm text-headline-sm text-text-main block py-4 border-b border-border-custom hover:text-primary transition-colors duration-300";
   };
 
-  const navClasses = `fixed top-0 w-full h-[80px] z-50 transition-all duration-300 ${
-    isScrolled 
-      ? "bg-background" 
-      : "bg-transparent"
-  }`;
+  const navClasses = `fixed top-0 w-full h-[80px] z-50 transition-all duration-300 glass-nav border-b border-border-custom/20`;
 
   const navStyle = isScrolled ? { boxShadow: '0 8px 30px rgba(143,74,53,0.12)' } : {};
 

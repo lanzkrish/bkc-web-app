@@ -7,16 +7,16 @@ export default function BookATablePage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background"></div>
           <img
             className="w-full h-full object-cover"
             alt="Cinematic restaurant interior at night"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZADWAkB1pbu97KsWekkeJGDJZWr5jotVqzdCTuh0FDn--RNsfqxaaJZZaXkyWCOFqRlGAU-XwLRG2nh-qm6J8YbSdp9cWdx4GSSnq8_Vwe0UqUBumjjvIBG_uGuwbE53SS_U5iPMmhPq5REcTq-KXwsGyM4XmSwmm55WROFH2akGr0_knuhWQRKpR_dcBQok-NMKKN_Xno0HcQGQSoBsrYNVrfANGuAvS4FrUjhpuSg2qkIi2oclXyxSDcQ0YAhJ8CoLtO52NZBTi"
+            src="/assets/reserve-bg.webp"
           />
         </div>
         <div className="relative z-10 text-center px-margin-mobile">
           <span className="font-label-caps text-label-caps text-primary mb-6 block tracking-[0.3em]">ESTABLISHED 2026</span>
-          <h1 className="font-display-lg text-display-lg md:text-display-lg text-on-surface max-w-4xl mx-auto">Reserve Your Table</h1>
+          <h1 className="font-display-lg text-display-lg md:text-display-lg text-text-light max-w-4xl mx-auto">Reserve Your Table</h1>
           <div className="w-24 h-[1px] bg-primary mx-auto mt-8 opacity-50"></div>
         </div>
       </section>
