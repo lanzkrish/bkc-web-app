@@ -40,13 +40,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center px-margin-mobile lg:px-margin-desktop max-w-container-max mx-auto h-full">
           <div className="flex items-center gap-4">
             <img
-              alt="Bhubaneswar Kitchen n Cafe Logo"
+              alt="Bhubaneswar Kitchen & Cafe Logo"
               className="h-12 w-12 object-contain opacity-80"
               style={{ filter: 'brightness(0)' }}
               src="/assets/BKC-nobg.png"
             />
             <span className="font-headline-sm text-headline-sm text-text-main tracking-tight hidden lg:block">
-              Bhubaneswar Kitchen n Cafe
+              Bhubaneswar Kitchen & Cafe
             </span>
           </div>
           
