@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bhubaneswar Kitchen Digital Experience (BKC)
 
-## Getting Started
+This repository is organized as a monorepo containing both the frontend web application and the backend API server for Bhubaneswar Kitchen.
 
-First, run the development server:
+## Repository Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+├── bkc-web-app/       # Frontend application (Next.js, TypeScript, Tailwind CSS)
+├── bkc-server/        # Backend API server (Express, Node.js, TypeScript, MongoDB, WhatsApp Cloud API)
+├── README.md          # Root repository documentation
+└── .gitignore         # Monorepo gitignore rules
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 1. BKC Web App (`bkc-web-app`)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Modern Next.js web application for Bhubaneswar Kitchen, featuring online table booking, rich menu exploration, and contact forms.
 
-## Learn More
+### Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd bkc-web-app
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The web application runs on [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 2. BKC Server (`bkc-server`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Express & TypeScript API backend handling table reservations, menu management, Cloudinary / Cloudflare R2 asset storage, Resend transactional emails, and WhatsApp notifications.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Environment Setup
+
+Create `.env.local` inside `bkc-server/` based on `bkc-server/.env.example`:
+
+```bash
+cd bkc-server
+cp .env.example .env.local
+# Update .env.local with your actual credentials
+```
+
+### Getting Started
+
+```bash
+cd bkc-server
+npm install
+npm run dev
+```
+
+The backend server runs on [http://localhost:5001](http://localhost:5001).
