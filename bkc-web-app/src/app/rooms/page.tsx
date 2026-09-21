@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RoomBookingForm from "@/components/RoomBookingForm";
 
 export default function RoomsPage() {
   return (
@@ -116,61 +117,7 @@ export default function RoomsPage() {
           <p className="font-body-lg text-text-light/80 mb-12 max-w-2xl mx-auto">
             Plan your visit to Royal Odisha Boutique Stay. Please select your dates and room preference below.
           </p>
-          <div className="bg-surface/5 backdrop-blur-md p-8 md:p-12 rounded-xl max-w-2xl mx-auto border border-gold/20 text-left shadow-2xl">
-            <form className="space-y-6">
-              <div className="space-y-6 mb-6">
-                <div>
-                  <label className="font-label-caps text-label-caps text-gold block mb-2">FULL NAME</label>
-                  <input className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all" placeholder="Your Name" type="text" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">EMAIL ADDRESS</label>
-                    <input className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all" placeholder="Your Email" type="email" />
-                  </div>
-                  <div>
-                    <label className="font-label-caps text-label-caps text-gold block mb-2">PHONE NUMBER</label>
-                    <input className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all" placeholder="+91 00000 00000" type="tel" />
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="font-label-caps text-label-caps text-gold block mb-2">CHECK-IN</label>
-                  <input className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all" type="date" />
-                </div>
-                <div>
-                  <label className="font-label-caps text-label-caps text-gold block mb-2">CHECK-OUT</label>
-                  <input className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all" type="date" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="font-label-caps text-label-caps text-gold block mb-2">GUESTS</label>
-                  <select className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all [&>option]:text-text-main">
-                    <option>1 Guest</option>
-                    <option>2 Guests</option>
-                    <option>3 Guests</option>
-                    <option>4+ Guests</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="font-label-caps text-label-caps text-gold block mb-2">ROOM TYPE</label>
-                  <select className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all [&>option]:text-text-main">
-                    <option>The Heritage Suite</option>
-                    <option>The Classic Room</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label className="font-label-caps text-label-caps text-gold block mb-2">SPECIAL REQUESTS</label>
-                <textarea className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all resize-none h-10" placeholder="Any special requirements?"></textarea>
-              </div>
-              <button className="btn-gold w-full py-4 font-label-caps text-label-caps uppercase tracking-widest mt-8">
-                Request Booking
-              </button>
-            </form>
-          </div>
+          <RoomBookingForm />
         </div>
       </section>
 
