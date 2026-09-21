@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5010';
+
 export default function BookingForms() {
   const [tableStatus, setTableStatus] = useState<{ loading: boolean, success?: boolean, error?: string }>({ loading: false });
   const [roomStatus, setRoomStatus] = useState<{ loading: boolean, success?: boolean, error?: string }>({ loading: false });
@@ -14,7 +16,7 @@ export default function BookingForms() {
     const data = Object.fromEntries(formData.entries());
     
     try {
-      const res = await fetch('http://localhost:5010/api/bookings/table', {
+      const res = await fetch(`${API_URL}/api/bookings/table`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -36,7 +38,7 @@ export default function BookingForms() {
     const data = Object.fromEntries(formData.entries());
     
     try {
-      const res = await fetch('http://localhost:5010/api/bookings/room', {
+      const res = await fetch(`${API_URL}/api/bookings/room`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

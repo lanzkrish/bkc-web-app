@@ -15,7 +15,8 @@ export default function TableBookingForm() {
     data.guests = `${data.guestCount} Guests (${data.occasion})`;
     
     try {
-      const res = await fetch('http://localhost:5010/api/bookings/table', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5010';
+      const res = await fetch(`${API_URL}/api/bookings/table`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

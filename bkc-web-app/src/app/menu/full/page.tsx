@@ -180,7 +180,8 @@ export default function FullMenuPage() {
   const [dietFilter, setDietFilter] = useState("all");
 
   useEffect(() => {
-    fetch('http://localhost:5010/api/menu')
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5010';
+    fetch(`${API_URL}/api/menu`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
