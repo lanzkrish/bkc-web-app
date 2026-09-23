@@ -13,7 +13,7 @@ const DEFAULT_GALLERY = [
   {
     title: "Signature Hyderabadi Biryani",
     category: "food",
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBoQQMuZIQ1ipkQWR4fnWJ01CnKjBCN2joMEI67pmegINZoMASuQe9WqNUjAumyx2VyWOQL-V2MAqAhiwcLSJq1mu6GkA_3QAt4ZzQ2FiLpe36rLfJ8q8aIJFN3BhoO1BCBubKz-JWWlhD_nruA4Wo8KFFfO0av7wmfd9rx9UgVe4DCNb8aQ-h0pFpnVv67MLSJW4rc6_-297dquYwNFZrM4tcrOqHXp62Gw_h4Xfs7-q6eWyzmcjgiPfcVY3tzKjihAH-RyLPK0KMp"
+    imageUrl: "/assets/hyderabadi-chicken-dum-biryani.jpg"
   },
   {
     title: "Heritage Dining Hall",
@@ -33,12 +33,12 @@ const DEFAULT_GALLERY = [
   {
     title: "Mutton Ghee Roast Sizzle",
     category: "food",
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDTk8lyZgR5LR1uITK5zWs_LMCrB2ICi04hnjozCvKUcH-OSInlg2BmcwRAYGwtgTtn2SEEpHsWW4ehME1FWzv-KaiwhGT4bnbhPyhMjstZR-T25046c-pvzG5Jeg0U9ruykdK_kUB7gL0e-yP0rdsfZcPz6DA9366qmktTAyK4mtoUddt57a48-nAOAZzEeV3bN5vhfWua5VLWaMcy9WnWHD0fRyL_oCernmOWjbbIZzjK0wdNATByP-zwRw2FaMczsywjuzAa4Gl1"
+    imageUrl: "/assets/mutton-ghee-roast.jpg"
   },
   {
     title: "Royal Paneer Gravy",
     category: "food",
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZKLJ14Su_vJiHmy5Jk-RVXWX7kRZWyLKRBSIaMZeW3uJOLX7rvOvdHu7RMeFVoCP322CkXNwzNtJLT4_nVoSTx_Ji8mB_LaSsNS8QRKMKw02xhTF7PuTx-ZIHuYuXno1GyDsuQ4A8mQywfob1RtXQwdgcrTyBSeLHs_ngdDKxYlyGnanvWa1qywKH4HsAZSICytGRfITA17S3a5C6xvrQsLT9_jvUg-gUZriCTZNCNHNMzvlB1fJ1V0JRAk0S859uhHBANY15G8OI"
+    imageUrl: "/assets/paneer-butter-masala.jpg"
   }
 ];
 

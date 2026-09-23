@@ -53,43 +53,43 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
           {/* Dish 1 */}
-          <div className="card group">
+          <Link href="/menu" className="card group block">
             <div className="aspect-[4/5] overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img rounded-b-none"
                 alt="Signature Hyderabadi Biryani"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoQQMuZIQ1ipkQWR4fnWJ01CnKjBCN2joMEI67pmegINZoMASuQe9WqNUjAumyx2VyWOQL-V2MAqAhiwcLSJq1mu6GkA_3QAt4ZzQ2FiLpe36rLfJ8q8aIJFN3BhoO1BCBubKz-JWWlhD_nruA4Wo8KFFfO0av7wmfd9rx9UgVe4DCNb8aQ-h0pFpnVv67MLSJW4rc6_-297dquYwNFZrM4tcrOqHXp62Gw_h4Xfs7-q6eWyzmcjgiPfcVY3tzKjihAH-RyLPK0KMp"
+                src="/assets/hyderabadi-chicken-dum-biryani.jpg"
               />
             </div>
             <div className="p-8">
               <h3 className="font-headline-sm text-headline-sm text-text-main mb-2">Signature Biryani</h3>
               <p className="font-body-md text-text-secondary line-clamp-2 mb-4">Aromatic Basmati rice layered with premium spices and succulent marinated meat.</p>
               <div className="flex justify-between items-center border-t border-border-custom pt-4">
-                <span className="font-label-caps text-label-caps text-primary-dark">₹549</span>
+                <span className="font-label-caps text-label-caps text-primary-dark">Explore Dish</span>
                 <span className="material-symbols-outlined text-primary-dark group-hover:translate-x-2 transition-transform">arrow_forward</span>
               </div>
             </div>
-          </div>
+          </Link>
           {/* Dish 2 */}
-          <div className="card group">
+          <Link href="/menu" className="card group block">
             <div className="aspect-[4/5] overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img rounded-b-none"
-                alt="Traditional Odia Dalma"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn-GdzhOQAuVjpCvCkjs3wtqzrBIpHe7Rcz-dP06y_AuxtifXq0Myj-e8mcbRJfqm4lFIa8RpL4HWCQSMJLPF8NaH1RJkhm5k4nBLwNZw4Xr8na8NGtL13MkZeqjbGX5V4_Cid1-TPRoQ6_4epFe_j1maMqvdrY7bFAz84mF1PjbDj3lRZIcrePHBBaFVGzkXvjAWe92OjqWIIPX9C88etx5U8L_c7SvhE52YvENFkubdFhNLquocT6_5jj8o71ykLrZoFW7DcDMYT"
+                alt="Drums of Heaven"
+                src="/assets/drums-of-heaven.jpg"
               />
             </div>
             <div className="p-8">
-              <h3 className="font-headline-sm text-headline-sm text-text-main mb-2">Traditional Dalma</h3>
-              <p className="font-body-md text-text-secondary line-clamp-2 mb-4">The soul of Odisha: Nutritious lentils cooked with garden-fresh vegetables and local spices.</p>
+              <h3 className="font-headline-sm text-headline-sm text-text-main mb-2">Drums of Heaven</h3>
+              <p className="font-body-md text-text-secondary line-clamp-2 mb-4">Crispy chicken lollipops tossed in a rich, tangy Indo-Chinese sauce and fresh spring onions.</p>
               <div className="flex justify-between items-center border-t border-border-custom pt-4">
-                <span className="font-label-caps text-label-caps text-primary-dark">₹299</span>
+                <span className="font-label-caps text-label-caps text-primary-dark">Explore Dish</span>
                 <span className="material-symbols-outlined text-primary-dark group-hover:translate-x-2 transition-transform">arrow_forward</span>
               </div>
             </div>
-          </div>
+          </Link>
           {/* Dish 3 */}
-          <div className="card group">
+          <Link href="/menu" className="card group block">
             <div className="aspect-[4/5] overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img rounded-b-none"
@@ -101,11 +101,11 @@ export default function Home() {
               <h3 className="font-headline-sm text-headline-sm text-text-main mb-2">Pakhala Thali</h3>
               <p className="font-body-md text-text-secondary line-clamp-2 mb-4">The ultimate summer comfort: Fermented rice served with a curated assortment of roasted sides.</p>
               <div className="flex justify-between items-center border-t border-border-custom pt-4">
-                <span className="font-label-caps text-label-caps text-primary-dark">₹449</span>
+                <span className="font-label-caps text-label-caps text-primary-dark">Explore Dish</span>
                 <span className="material-symbols-outlined text-primary-dark group-hover:translate-x-2 transition-transform">arrow_forward</span>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 

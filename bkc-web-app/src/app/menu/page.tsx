@@ -35,19 +35,19 @@ const DEFAULT_FEATURED: Record<string, FeaturedDish[]> = {
       name: "Drums of Heaven",
       price: 286,
       description: "Crispy chicken lollipops tossed in a rich, tangy Indo-Chinese sauce and fresh spring onions.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCRZv1RL_jkEwN-yUvHUsdH8wXi1vHVwPVDtJQMqSPsOS7XInMFXXYHwsIom-uHPFgG7DgFXfu_P8XxgkAC1bGiJJO4QXp1NW8dkiAmhuQT1jO1j9U4E_DK_dwIwmkKyHckxLq_tKhnarRTlub-skj-MvT9FIghyagC4W1rp2IkawA-6FDAZpOZHnWx0j2xyBYPEeSuk7jHf81hzvSpRZStEee50lq1TTWjsyvVBMrHHfM24nMT300O5WoNph3OdzzMc2WDS6njoSKI",
+      img: "/assets/drums-of-heaven.jpg",
     },
     {
       name: "Mutton Ghee Roast",
       price: 359,
       description: "Tender mutton morsels slow-roasted in pure desi ghee with freshly ground coastal spices.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDTk8lyZgR5LR1uITK5zWs_LMCrB2ICi04hnjozCvKUcH-OSInlg2BmcwRAYGwtgTtn2SEEpHsWW4ehME1FWzv-KaiwhGT4bnbhPyhMjstZR-T25046c-pvzG5Jeg0U9ruykdK_kUB7gL0e-yP0rdsfZcPz6DA9366qmktTAyK4mtoUddt57a48-nAOAZzEeV3bN5vhfWua5VLWaMcy9WnWHD0fRyL_oCernmOWjbbIZzjK0wdNATByP-zwRw2FaMczsywjuzAa4Gl1",
+      img: "/assets/mutton-ghee-roast.jpg",
     },
     {
       name: "Paneer Lollipop",
       price: 238,
       description: "Crispy spiced cottage cheese skewers seasoned with fragrant herbs, served with mint chutney.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDkNhhv2hSYoSeP-vkOtpjhj6iMShtjAyRo3PBNH6gTz07ZHN63nl5LmIwksv0JyvmqP1V4CxiExpuehqcdk6wLejHrRozA1PK9_oHvrNbtMMwr0RjmmsdJTjr1b0S1vfO_mmGkjvxHhd_pVn3pT1HbdNls7A4kgjtcAXZw0fpeQneLayO4sbZQIx0bPiCUFSj8DwLFAg8qYbUiy4kAsbA12tWOCKxcR6_lNFLjqZt5v2P3uQW-Yk3Gl0eOJBjW0wAtsc5c2a2SAcmg",
+      img: "/assets/paneer-lollipop.jpg",
     },
   ],
   "main-course": [
@@ -55,33 +55,39 @@ const DEFAULT_FEATURED: Record<string, FeaturedDish[]> = {
       name: "Paneer Butter Masala",
       price: 214,
       description: "Soft cottage cheese simmered in a velvety tomato-butter gravy finished with fresh cream.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZKLJ14Su_vJiHmy5Jk-RVXWX7kRZWyLKRBSIaMZeW3uJOLX7rvOvdHu7RMeFVoCP322CkXNwzNtJLT4_nVoSTx_Ji8mB_LaSsNS8QRKMKw02xhTF7PuTx-ZIHuYuXno1GyDsuQ4A8mQywfob1RtXQwdgcrTyBSeLHs_ngdDKxYlyGnanvWa1qywKH4HsAZSICytGRfITA17S3a5C6xvrQsLT9_jvUg-gUZriCTZNCNHNMzvlB1fJ1V0JRAk0S859uhHBANY15G8OI",
+      img: "/assets/paneer-butter-masala.jpg",
     },
     {
       name: "Kaju Paneer Curry",
       price: 299,
       description: "Roasted cashew nuts and cottage cheese cooked in a decadent, mildly spiced royal gravy.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDYWl3LHhoE554XVoV9GrnAIIC0pe7WWVpElIauK8Ootf0zN_8oAN_rRZ-yQy4BGHdev-iZSWNpE5gTvEfj8Yoeh2Yvj2iaYGR52XP7x2ICjd-JvDGSqf6EAssAz9W82njq9Tz775oXgEdHEL5kUNaT6LSPIL4NKRzH-y6ZyqjAe0lYxu1gQqQ_pUcm9E8_A4ZZQL_HWaZM5WW-7Gdx_ovdDVJyxHcKOHzoHqp2PKU4YxwkzNFe_CFjBdE3Lf6yQRMIbvxMSYivoTdf",
+      img: "/assets/kaju-paneer-curry.jpg",
     },
     {
       name: "Dal Tadka",
       price: 166,
       description: "Homestyle yellow lentils tempered with ghee, cumin seeds, garlic, and fresh coriander.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0woEiPkU04kVNN87EPsPbQArOUiistNKeFDhS3KMRWhIO3AHq8wFZ9bnou6qnwf27PLfzzD1ZFVyr8Jj9Ga8uxP7MYhLltJVz3JBrq-RAkkHc6BOietXNvPpSHuNkzT1j3qGSP-8BJ-PMFAFqKwCWX1HMKBugaZusr62p4esFn19eS9NIaYqKbYGRCcEyzIF6__3GLQqhPgXf9l0Drs4DR1WJOr-1gcQEtERJaYuJVXDXYCBRccpp25cEXocNnoB7xQCYm41tz4DQ",
+      img: "/assets/dal-tadka.jpg",
     },
   ],
   biryanis: [
     {
-      name: "Veg Biryani",
-      price: 210,
-      description: "Long-grain basmati rice layered with garden-fresh vegetables and secret royal spices.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUPiRNcEGuEIOqA7AeXH1SX8m7CZ_UOtTLHkh5kLyYd8-fTOi8QdOZguca--CiCumURP0hW9sRVKLDepLnDYYsvt8uzGaYS8wB_nPpiPL4W4kncPpTvtPGutkHKheC4cRZ875NbhlmZ6LWI9f8gVZ3M7AzQTxrb1pnmdcpe19Jb92ZrSZKsBf5vvbLXpMjSPE_-wm9Uke6ltsLhHiRUQu8JmvVEKjwgyPiTq2QXG0sJD3kEeR_ECqPzDlszrX9jhQcB3aIpyD4OS9B",
+      name: "Hyderabadi Chicken Dum Biryani",
+      price: 239,
+      description: "Aromatic extra-long basmati rice slow-cooked with tender spiced chicken drumstick, saffron, and caramelized onions.",
+      img: "/assets/hyderabadi-chicken-dum-biryani.jpg",
+    },
+    {
+      name: "Chicken Fry Piece Biryani",
+      price: 239,
+      description: "Fragrant biryani rice served with crispy, spicy seasoned chicken pieces, fried cashews, and fresh mint.",
+      img: "/assets/special-chicken-biryani.jpg",
     },
     {
       name: "Paneer Biryani",
       price: 239,
       description: "Succulent marinated cottage cheese layered with fragrant basmati and caramelized onions.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1MktCLp3ovnKkkIjOXotrjCIOGfzT-Ib1PiFBwV5Wqn9Oc-PjsQcY5c21v2QgW63flZ35IX7U67J2Jf9i2S0yzo6utDA01RvkdJDA46oWwOQWMNXeZBRjsuIkwezDkQ1rk5pZVPVggVar-yYPfpos4KlcsC4iJ-RLbu7HQ781hmkWtxocu9XfO4U2yYUP1QYGQ1YwlIG3nd7mDSIBCX8dLwxX1P64xN98kwExpytz6TrPSWexW02XBBuHtfzdQA2gyDYXKD-_WkB6",
+      img: "/assets/paneer-biryani.jpg",
     },
   ],
   desserts: [
@@ -89,13 +95,13 @@ const DEFAULT_FEATURED: Record<string, FeaturedDish[]> = {
       name: "Hot Gulab Jamun",
       price: 89,
       description: "Warm, melt-in-mouth milk dumplings soaked in cardamom and saffron infused syrup.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDW4FqUIZ6nmS29Pr0_R53tBg0QTVG2Bw1OCNMYlJzcK6a0zw3FZV14hh8HyKiHxuWBeZjmDvMZkQvO9PMa83ALmNtb8lS-8q6OXwGfYlxdJ_1hbqeuZAc6VuqQjAJtHqK5ZwhGKYRmPohT-ZYlllq3F8dZ8KMmiBhKXtePMoN2xYOQqNrSMk9pM47j8bPS0Yc7Un5y81lmVMCAycXgYhvuP9UiyJhKlnIGsNwNyFtpf2X9so39SUyyugUvHNAixW1NY1_vkCul7cBc",
+      img: "/assets/hot-gulab-jamun.jpg",
     },
     {
       name: "Ice Cream Selection",
       price: 99,
       description: "Rich and velvety scoops available in classic vanilla, crunch butterscotch, or rich chocolate.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBsCx83dqEZ-Y9mLTGHV28JyMuWbm1L8Ml8qppDV4Op9-Qn5Ex6kV_ulgmdfplCSsQyBlpOpYa-DqPzQCYSDXlrmIfSEwDjEM6sHHyXaC7MyrnEXsFXjS59wOhoiijVdB1SJTdsasaHcPK2AJmMXeAx7-zFfnfrRxOebWB2QN_VLc81zC-9OafqHpWOh2WYSijRCq8PxnstJRuExdATQ3S8pP70NtzC4RxVKxcUzA9ThrIdgnfkXFDZM1048gvF3rknTylYoFlgfc29",
+      img: "/assets/ice-cream-selection.jpg",
     },
   ],
   beverages: [
@@ -103,13 +109,13 @@ const DEFAULT_FEATURED: Record<string, FeaturedDish[]> = {
       name: "Virgin Mojito / Blue Lagoon",
       price: 139,
       description: "Crisp, refreshing coolers with muddled mint, citrus, and sparkling bubbles.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAretVutjCqrS3Ie4MTMAd9kADda_fQmpB2-RPYwt24MCu4gyPzeLAG7akN7BUBeZPufNTX6v2wwvY4E5SKiSN8fGytr2Upqn4Bw6fELqMWYjboi1df5kobgBMa7ckr4pbKswGIg17kG2m61MVjjEdxwcKTzVO_fH4Fv8dPAxJ56mRUCL2vNfpYjZ26abuXz28O45_X1Ja6MVK4mVZIW8A9V6m_6cZxtFHzatqZR2f6daSARvsHYPzoSV0t_drnCBmOcI6PU5WIu6GX",
+      img: "/assets/virgin-mojito.jpg",
     },
     {
       name: "Cold Coffee",
       price: 149,
       description: "Rich blended espresso poured over chilled milk and ice, finished with a touch of chocolate.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbtay4EKBj9zKRCVmh_lm5AndlPq83LJ5BZh3mPC9kfA6uNpCyMskLNV6Qay-EXSC6tJbTYWHwYWSq9aJPb5uY7_uzUdS9VnUVT3j8mdffUTmND5AMZRu364ryyk67khQG5J7SXnPNEkOycJejG0y_9w6jh0_NsnHUePEggmbEgMYl227aFUdtifslceg61HHq6WZqrckQh8XPbqQQZxhCVesZjqYmjRXvFLxNjF9bOO-si5H612UUwnCaKao9AJAdVKNt-mpwRUKV",
+      img: "/assets/cold-coffee.jpg",
     },
   ],
 };
@@ -159,13 +165,11 @@ export default function MenuPage() {
     if (!liveMenu || liveMenu.length === 0) return dish;
 
     const dishNameNorm = dish.name.toLowerCase().trim();
+
+    // 1. Exact match first
     for (const sec of liveMenu) {
       for (const item of sec.items) {
-        if (
-          item.name.toLowerCase().trim() === dishNameNorm ||
-          item.name.toLowerCase().includes(dishNameNorm) ||
-          dishNameNorm.includes(item.name.toLowerCase().trim())
-        ) {
+        if (item.name.toLowerCase().trim() === dishNameNorm) {
           let p = item.price;
           if (typeof p === "object" && p !== null) {
             p = Object.values(p)[0] as any;
@@ -179,6 +183,29 @@ export default function MenuPage() {
         }
       }
     }
+
+    // 2. Partial match (excluding mushroom if dish is not mushroom)
+    for (const sec of liveMenu) {
+      for (const item of sec.items) {
+        const itemNorm = item.name.toLowerCase().trim();
+        if (itemNorm.includes("mushroom") && !dishNameNorm.includes("mushroom")) {
+          continue;
+        }
+        if (itemNorm.includes(dishNameNorm) || dishNameNorm.includes(itemNorm)) {
+          let p = item.price;
+          if (typeof p === "object" && p !== null) {
+            p = Object.values(p)[0] as any;
+          }
+          return {
+            ...dish,
+            name: item.name,
+            price: p || dish.price,
+            isOutOfStock: Boolean(item.isOutOfStock),
+          };
+        }
+      }
+    }
+
     return dish;
   };
 
