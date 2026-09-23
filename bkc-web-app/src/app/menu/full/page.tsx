@@ -7,6 +7,7 @@ type MenuItem = {
   name: string;
   type: string;
   price: number | Record<string, number>;
+  isOutOfStock?: boolean;
 };
 
 type MenuSection = {
@@ -181,7 +182,9 @@ export default function FullMenuPage() {
 
   useEffect(() => {
     const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5010';
-    fetch(`${API_URL}/api/menu`)
+    fetch(`${API_URL}/api/menu`, {
+      headers: { 'ngrok-skip-browser-warning': 'true' },
+    })
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
@@ -314,10 +317,15 @@ export default function FullMenuPage() {
                   )}
                   <div className="space-y-6">
                   {section.items.map((item, itemIdx) => (
-                    <div key={itemIdx} className="flex justify-between items-end border-b border-border-custom/30 pb-3 hover:border-primary/50 transition-colors">
+                    <div key={itemIdx} className={`flex justify-between items-end border-b border-border-custom/30 pb-3 hover:border-primary/50 transition-colors ${item.isOutOfStock ? 'opacity-50' : ''}`}>
                       <div className="flex-1 pr-4">
                         <h4 className="font-headline-sm text-text-main flex items-center gap-3">
-                          {item.name}
+                          <span className={item.isOutOfStock ? 'line-through text-text-secondary' : ''}>{item.name}</span>
+                          {item.isOutOfStock && (
+                            <span className="text-[10px] font-label-caps uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-300 font-semibold">
+                              Out of Stock
+                            </span>
+                          )}
                           {item.type === 'veg' && (
                             <span title="Vegetarian" className="w-4 h-4 border-2 border-green-600 flex items-center justify-center p-[2px] bg-white flex-shrink-0">
                               <span className="w-full h-full bg-green-600 rounded-full"></span>

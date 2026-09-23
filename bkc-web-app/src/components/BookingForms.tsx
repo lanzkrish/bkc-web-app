@@ -1,12 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5010';
 
 export default function BookingForms() {
+  const [roomTypes, setRoomTypes] = useState<string[]>([
+    'The Heritage Suite',
+    'The Classic Room',
+  ]);
   const [tableStatus, setTableStatus] = useState<{ loading: boolean, success?: boolean, error?: string }>({ loading: false });
   const [roomStatus, setRoomStatus] = useState<{ loading: boolean, success?: boolean, error?: string }>({ loading: false });
+
+  useEffect(() => {
+    fetch(`${API_URL}/api/rooms`, {
+      headers: { "ngrok-skip-browser-warning": "true" },
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setRoomTypes(data.map((r: any) => r.name));
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const handleTableSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -180,9 +197,10 @@ export default function BookingForms() {
             </div>
             <div>
               <label className="font-label-caps text-label-caps text-gold block mb-2">ROOM TYPE</label>
-              <select name="roomType" required className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all [&>option]:text-text-main">
-                <option>The Heritage Suite</option>
-                <option>The Classic Room</option>
+              <select name="roomType" required defaultValue={roomTypes[0] || "The Heritage Suite"} className="w-full border-b border-border-custom focus:border-gold bg-transparent py-2 text-text-main focus:ring-0 outline-none transition-all [&>option]:text-text-main">
+                {roomTypes.map((rt) => (
+                  <option key={rt} value={rt}>{rt}</option>
+                ))}
               </select>
             </div>
           </div>

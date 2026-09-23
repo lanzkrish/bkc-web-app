@@ -1,9 +1,11 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 export interface IMenuItem {
+  _id?: string;
   name: string;
   type: string;
   price: any; // Can be a number or an object like { regular: 100, large: 150 }
+  isOutOfStock?: boolean;
 }
 
 export interface IMenuSection extends Document {
@@ -15,7 +17,8 @@ export interface IMenuSection extends Document {
 const MenuItemSchema: Schema = new Schema({
   name: { type: String, required: true },
   type: { type: String, required: true }, // e.g., 'veg', 'non-veg', 'both', 'egg'
-  price: { type: Schema.Types.Mixed, required: true } // Mixed type to support number or object
+  price: { type: Schema.Types.Mixed, required: true }, // Mixed type to support number or object
+  isOutOfStock: { type: Boolean, default: false }
 });
 
 const MenuSectionSchema: Schema = new Schema({

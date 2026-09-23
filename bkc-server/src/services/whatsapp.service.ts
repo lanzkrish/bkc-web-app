@@ -1,13 +1,34 @@
 import { Client, LocalAuth } from 'whatsapp-web.js';
 import qrcode from 'qrcode';
 import { sendQRCodeEmail, sendAlertEmail } from './email.service';
+import fs from 'fs';
+import path from 'path';
 
 class WhatsAppService {
   private client: Client | null = null;
   private isReady = false;
   private messageQueue: { to: string, message: string }[] = [];
 
+  private cleanStaleLocks() {
+    try {
+      const sessionDir = path.resolve('bkc-whatsapp-session', 'session');
+      const lockFiles = ['SingletonLock', 'SingletonCookie', 'SingletonSocket'];
+      for (const file of lockFiles) {
+        const filePath = path.join(sessionDir, file);
+        try {
+          fs.rmSync(filePath, { force: true });
+        } catch {
+          // ignore
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }
+
   async initialize() {
+    this.cleanStaleLocks();
+
     try {
       this.client = new Client({
         authStrategy: new LocalAuth({ dataPath: 'bkc-whatsapp-session' }),
@@ -92,6 +113,17 @@ class WhatsAppService {
     } catch (error) {
       console.error(`Failed to send WhatsApp message to ${to}:`, error);
       return false;
+    }
+  }
+
+  async destroy() {
+    if (this.client) {
+      try {
+        await this.client.destroy();
+        console.log('WhatsApp client destroyed cleanly.');
+      } catch (e) {
+        console.error('Error destroying WhatsApp client:', e);
+      }
     }
   }
 }

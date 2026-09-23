@@ -1,13 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5010';
 
 export default function RoomBookingForm() {
+  const [roomTypes, setRoomTypes] = useState<string[]>([
+    'The Heritage Suite',
+    'The Classic Room',
+  ]);
   const [status, setStatus] = useState<{ loading: boolean; success?: boolean; error?: string }>({
     loading: false,
   });
+
+  useEffect(() => {
+    fetch(`${API_URL}/api/rooms`, {
+      headers: { "ngrok-skip-browser-warning": "true" },
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setRoomTypes(data.map((r: any) => r.name));
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -125,11 +142,14 @@ export default function RoomBookingForm() {
             <select
               name="roomType"
               required
-              defaultValue="The Heritage Suite"
+              defaultValue={roomTypes[0] || "The Heritage Suite"}
               className="w-full border-b border-text-light/20 focus:border-gold bg-transparent py-2 text-text-light focus:ring-0 outline-none transition-all [&>option]:text-text-main"
             >
-              <option>The Heritage Suite</option>
-              <option>The Classic Room</option>
+              {roomTypes.map((rt) => (
+                <option key={rt} value={rt}>
+                  {rt}
+                </option>
+              ))}
             </select>
           </div>
         </div>
