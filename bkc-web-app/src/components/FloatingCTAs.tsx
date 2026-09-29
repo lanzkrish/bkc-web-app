@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function FloatingCTAs() {
+  const pathname = usePathname();
+  const isFullMenu = pathname?.startsWith("/menu/full");
+
   return (
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 items-end">
+    <div className={`fixed right-0 top-1/2 -translate-y-1/2 z-50 flex-col gap-3 items-end ${isFullMenu ? "hidden md:flex" : "flex"}`}>
       <CTALink 
         href="/book-a-table#booking-form" 
         icon="restaurant" 
